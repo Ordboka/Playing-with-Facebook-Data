@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class GenTesting {
 	
-	public ArrayList<MessageThread> threads = new ArrayList<>();
+	public ArrayList<Convorsation> threads = new ArrayList<>();
 	
 	public String findThreads(String line){
-		ArrayList<MessageThread> messageThreads = new ArrayList<>();
+		ArrayList<Convorsation> messageThreads = new ArrayList<>();
 		int lineLength = line.length();
 		boolean inMessage = false;
 		int messageStart = -1;
@@ -25,7 +25,7 @@ public class GenTesting {
 				}
 			}else{
 				if(line.substring(i, i+10).equals("</p></div>")){
-					MessageThread thread = new MessageThread(line.substring(messageStart,i));
+					Convorsation thread = new Convorsation(line.substring(messageStart,i));
 					if(thread.getMessages().size()!=0){
 						threads.add(thread);
 					}	
@@ -67,7 +67,7 @@ public class GenTesting {
     return content;
 	}
 	
-	public ArrayList<MessageThread> getThreads() {
+	public ArrayList<Convorsation> getThreads() {
 		return threads;
 	}
 	
@@ -75,7 +75,7 @@ public class GenTesting {
 		String path = "C:\\Users\\bensb\\OneDrive\\Documents\\messages.htm";
 		GenTesting test = new GenTesting();
 		String content = test.loadFile(path);
-		for(MessageThread thread : test.getThreads()){
+		for(Convorsation thread : test.getThreads()){
 			System.out.println(thread);
 		}
 		//System.out.println(test.getThreads());
