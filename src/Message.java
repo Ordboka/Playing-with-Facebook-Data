@@ -48,7 +48,7 @@ public class Message {
 				break;
 			}
 		}
-        String token = "EAACEdEose0cBALVudWbyTWIXaei4gyO7WQWklwUGUn9obuZA5LK3LgpzqnPcXQVJTpZAZB53CKuHbZBYkDaJOiT5uN40evT5ZA9gOo17ZCr4s0NcSPtZBQHzuCu3iDdzf4xMmwMKVR6S50rh6pc5cyR2WZAojeyALBmkHvmz7RtdqXkuc888ZCvxBIdXik12NTE4ZD";
+        String token = "EAACEdEose0cBAGZAKsbgDldOk9EwPfP1BZCIcPk2i5Mq1uRkOWQZBafpEhZC2AUEDPG0dFqZA4pZCWKUFODa7Jn8LF3nZAAV7plITCWYp8ITIXJ9h1ZAOWjI5yCwGGn6kNFXYMufkIpY9GryOmF9SRX7VGuQ1ZAKdG2VqubxqGDGZBYvl7Woi3pP6YV6VCgIEswdUZD";
         FacebookClient fbClient = new DefaultFacebookClient(token, Version.LATEST);
         try{
         	User friend = fbClient.fetchObject(id, User.class);

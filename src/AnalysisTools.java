@@ -28,7 +28,7 @@ public class AnalysisTools {
 				}
 				
 				if(i!=0) {
-					System.out.println(message.content);
+					System.out.println("[" + user + "] " + message.content);
 					if(map.containsKey(user)) {
 						map.put(user, i+map.get(user));
 					}
