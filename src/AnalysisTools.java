@@ -23,11 +23,13 @@ public class AnalysisTools {
 					i++;
 				}
 				
-				if(map.containsKey(user)) {
-					map.put(user, i+map.get(user));
-				}
-				else {
-					map.put(user, i);
+				if(i!=0) {
+					if(map.containsKey(user)) {
+						map.put(user, i+map.get(user));
+					}
+					else {
+						map.put(user, i);
+					}
 				}
 			}
 		}
