@@ -11,9 +11,12 @@ public class AnalysisTools {
 		String content;
 		String user;
 		
+		word = word.toLowerCase();
+		
 		for(Conversation convo : convoList) {
 			for(Message message : convo.messages) {
 				content = message.content;
+				content = content.toLowerCase();
 				user = message.user;
 				
 				int i = 0;
