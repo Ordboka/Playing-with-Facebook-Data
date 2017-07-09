@@ -10,7 +10,6 @@ public class GenTesting {
 	public ArrayList<Convorsation> threads = new ArrayList<>();
 	
 	public String findThreads(String line){
-		ArrayList<Convorsation> messageThreads = new ArrayList<>();
 		int lineLength = line.length();
 		boolean inMessage = false;
 		int messageStart = -1;
