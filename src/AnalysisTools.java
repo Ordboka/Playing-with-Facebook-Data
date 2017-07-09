@@ -28,7 +28,6 @@ public class AnalysisTools {
 				}
 				
 				if(i!=0) {
-					System.out.println("[" + user + "] " + message.content);
 					if(map.containsKey(user)) {
 						map.put(user, i+map.get(user));
 					}
@@ -37,6 +36,62 @@ public class AnalysisTools {
 					}
 				}
 			}
+		}
+		return map;
+	}
+	
+	public static void specificWordDisplay(ArrayList<Conversation> convoList, String word) {
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		
+		String content;
+		String user;
+		
+		word = word.toLowerCase();
+		
+		for(Conversation convo : convoList) {
+			for(Message message : convo.messages) {
+				content = message.content;
+				content = content.toLowerCase();
+				user = message.user;
+				
+				
+				int i = 0;
+				Pattern p = Pattern.compile(word);
+				Matcher m = p.matcher(content);
+				while (m.find()) {
+					i++;
+				}
+				
+				if(i!=0) {
+					System.out.println(message.date+" [" + user + "] " + message.content);
+					if(map.containsKey(user)) {
+						map.put(user, i+map.get(user));
+					}
+					else {
+						map.put(user, i);
+					}
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	public static HashMap<String, Integer> totalWordCountByPerson(ArrayList<Conversation> convoList) {
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		String user;
+		for(Conversation convo : convoList) {
+			for(Message message : convo.messages) {
+				user = message.user;
+				if(map.containsKey(user)) {
+					map.put(user, map.get(user)+1);
+				}
+				else {
+					map.put(user, 1);
+				}	
+			}
+			
 		}
 		return map;
 	}

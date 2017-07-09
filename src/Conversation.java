@@ -42,6 +42,7 @@ public class Conversation {
 	public ArrayList<Message> getMessages() {
 		return messages;
 	}
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

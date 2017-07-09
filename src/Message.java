@@ -9,6 +9,7 @@ public class Message {
 	String user;
 	String date;
 	String content;
+	
 	private final int USERSTARTINDEX = 47, METALENGTH = 26, CONTENTTAGLENGHT=22;
 	private static HashMap<String, String> idList = new HashMap<>();
 	
@@ -48,7 +49,7 @@ public class Message {
 				break;
 			}
 		}
-        String token = "EAACEdEose0cBAGZAKsbgDldOk9EwPfP1BZCIcPk2i5Mq1uRkOWQZBafpEhZC2AUEDPG0dFqZA4pZCWKUFODa7Jn8LF3nZAAV7plITCWYp8ITIXJ9h1ZAOWjI5yCwGGn6kNFXYMufkIpY9GryOmF9SRX7VGuQ1ZAKdG2VqubxqGDGZBYvl7Woi3pP6YV6VCgIEswdUZD";
+        String token = "EAACEdEose0cBAMWnocxwpyZB2sKJvbTdum0raGk9uj3cq5tSUmeZCHUUhJumkRafJybfyZA4xlS95GPZCXRvmSLENe9N4bDW1ZBZCSc1U4XiSvGBKufUWmHWKMkjtbElSoYMFMjE13dCqft5bGXQ5woUU8wT6LtHrZCjaSfnNA1ZBXipHseanPqVpQsQnJx3hEsZD";
         FacebookClient fbClient = new DefaultFacebookClient(token, Version.LATEST);
         try{
         	User friend = fbClient.fetchObject(id, User.class);
