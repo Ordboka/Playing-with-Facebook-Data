@@ -9,6 +9,7 @@ public class Message {
 	String user;
 	String date;
 	String content;
+	
 	private final int USERSTARTINDEX = 47, METALENGTH = 26, CONTENTTAGLENGHT=22;
 	private static HashMap<String, String> idList = new HashMap<>();
 	

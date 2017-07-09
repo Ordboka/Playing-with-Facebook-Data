@@ -72,14 +72,19 @@ public class GenTesting {
 	}
 	
 	public static void main(String[] args) {
-		String path = "C:\\Users\\bensb\\OneDrive\\Documents\\messages.htm";
+//		String path = "C:\\Users\\bensb\\OneDrive\\Documents\\messages.htm";
+		String path = "C:\\Users\\Ole Johan\\Desktop\\facebook-olejomi\\html\\messages.htm";
 		GenTesting test = new GenTesting();
 		String content = test.loadFile(path);
 		for(Conversation thread : test.getThreads()){
 			System.out.println(thread);
 		}
-		System.out.println(AnalysisTools.specificWordCounter(test.getThreads(), "dank"));
-		//System.out.println(test.getThreads());
+//		AnalysisTools.specificWordDisplay(test.getThreads(), "dank");
+		
+		System.out.println(AnalysisTools.test(test.getThreads()));
+		
+		
+//		System.out.println(test.getThreads());
 	}
 	
 }
