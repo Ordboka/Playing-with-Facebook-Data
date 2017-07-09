@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class Convorsation {
+public class Conversation {
 	public ArrayList<Message> messages;
 	public ArrayList<String> users;
 	
-	public Convorsation(String conversation){
+	public Conversation(String conversation){
 		messages  = new ArrayList<Message>();
 		conversation+= "</p>";
 		findMessages(conversation);
