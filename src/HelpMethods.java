@@ -24,7 +24,7 @@ public class HelpMethods {
 			values.set(index, tempInt);
 		}
 		for(int i = 0; i<keys.size();i++){
-			System.out.println(keys.get(i)+ " " + values.get(i));
+			System.out.println(i + " " + keys.get(i)+ " " + values.get(i));
 		}
 	}
 }
