@@ -78,6 +78,7 @@ public class GenTesting {
 		for(Conversation thread : test.getThreads()){
 			System.out.println(thread);
 		}
+		System.out.println(AnalysisTools.specificWordCounter(test.getThreads(), "lolz"));
 		//System.out.println(test.getThreads());
 	}
 	

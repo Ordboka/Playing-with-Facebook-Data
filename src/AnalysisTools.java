@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class AnalysisTools {
 	
-	public HashMap<String, Integer> specificWordCounter(ArrayList<Conversation> convoList, String word) {
+	public static HashMap<String, Integer> specificWordCounter(ArrayList<Conversation> convoList, String word) {
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		
 		String content;
