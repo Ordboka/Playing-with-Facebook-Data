@@ -6,15 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-
-
-
-
-//lol
-
-
-
-
 public class GenTesting {
 	
 	public ArrayList<MessageThread> threads = new ArrayList<>();
