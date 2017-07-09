@@ -7,6 +7,7 @@ public class Convorsation {
 	
 	public Convorsation(String conversation){
 		messages  = new ArrayList<Message>();
+		conversation+= "</p>";
 		findMessages(conversation);
 		identifyUsers(messages);
 	}
