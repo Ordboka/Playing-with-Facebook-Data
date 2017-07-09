@@ -72,14 +72,16 @@ public class GenTesting {
 	}
 	
 	public static void main(String[] args) {
-		String path = "C:\\Users\\bensb\\OneDrive\\Documents\\messages.htm";
-//		String path = "C:\\Users\\Ole Johan\\Desktop\\facebook-olejomi\\html\\messages.htm";
+//		String path = "C:\\Users\\bensb\\OneDrive\\Documents\\messages.htm";
+		String path = "C:\\Users\\Ole Johan\\Desktop\\facebook-olejomi\\html\\messages.htm";
 		GenTesting test = new GenTesting();
 		String content = test.loadFile(path);
-		for(Conversation thread : test.getThreads()){
-			System.out.println(thread);
+		
+		for(Conversation conv : test.getThreads()){
+			System.out.println(conv);
 		}
-		HelpMethods.printSortedMap(AnalysisTools.totalWordCountByPerson(test.getThreads()));
+		
+//		HelpMethods.printSortedMap(AnalysisTools.totalWordCountByPerson(test.getThreads()));
 	}
 	
 }

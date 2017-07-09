@@ -75,9 +75,6 @@ public class AnalysisTools {
 		}
 	}
 	
-	
-	
-	
 	public static HashMap<String, Integer> totalWordCountByPerson(ArrayList<Conversation> convoList) {
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		String user;
@@ -91,7 +88,6 @@ public class AnalysisTools {
 					map.put(user, 1);
 				}	
 			}
-			
 		}
 		return map;
 	}

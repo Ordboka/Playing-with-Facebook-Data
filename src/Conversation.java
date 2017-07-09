@@ -1,12 +1,15 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.stream.Collectors;
 
 public class Conversation {
 	public ArrayList<Message> messages;
 	public ArrayList<String> users;
+	public HashMap<String, Integer> userWordCountMap;
 	
 	public Conversation(String conversation){
 		messages  = new ArrayList<Message>();
+		userWordCountMap = new HashMap<String, Integer>();
 		conversation+= "</p>";
 		findMessages(conversation);
 		identifyUsers(messages);
@@ -21,6 +24,7 @@ public class Conversation {
 		boolean inMessage = false;
 		int messageStart = -1;
 		int i = 0;
+		String user;
 		while(i<lineLength-3){
 			if(!inMessage){
 				if(line.substring(i, i+21).equals("<div class=\"message\">")){
@@ -32,6 +36,16 @@ public class Conversation {
 				if(line.substring(i, i+4).equals("</p>")){
 					Message msg = new Message(line.substring(messageStart,i));
 					messages.add(msg);
+					
+					user = msg.user;
+					if(userWordCountMap.containsKey(user)) {
+						userWordCountMap.put(user, userWordCountMap.get(user)+1);
+					}
+					else {
+						userWordCountMap.put(user, 1);
+					}	
+					
+					
 					inMessage = false;
 				}
 			}
@@ -45,7 +59,6 @@ public class Conversation {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return users + " " + messages.size();
+		return userWordCountMap.toString();
 	}
 }
