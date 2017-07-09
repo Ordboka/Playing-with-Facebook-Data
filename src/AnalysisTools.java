@@ -19,6 +19,7 @@ public class AnalysisTools {
 				content = content.toLowerCase();
 				user = message.user;
 				
+				
 				int i = 0;
 				Pattern p = Pattern.compile(word);
 				Matcher m = p.matcher(content);
@@ -27,6 +28,7 @@ public class AnalysisTools {
 				}
 				
 				if(i!=0) {
+					System.out.println(message.content);
 					if(map.containsKey(user)) {
 						map.put(user, i+map.get(user));
 					}
