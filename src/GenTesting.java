@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class GenTesting {
 	
@@ -43,6 +44,28 @@ public class GenTesting {
 		}
 	}
 	
+	public ArrayList<Conversation> removeDuplicates(ArrayList<Conversation> conversations){
+		ArrayList<ArrayList<String>> names = new ArrayList<>();
+		ArrayList<Conversation> newConversations = new ArrayList<>();
+		for(Conversation c : conversations){
+			Collections.sort(c.users);
+		}
+		for(Conversation c : conversations){
+			if(names.contains(c.users)){
+				for(Conversation newC : newConversations){
+					if(newC.users.equals(c.users)){
+						newC.addConversation(c);
+						break;
+					}
+				}
+			}else{
+				names.add(c.users);
+				newConversations.add(c);
+			}
+		}
+		return newConversations;
+	}
+	
 	public String loadFile(String fileName){
 	String content = "";
 	    try {
@@ -72,10 +95,11 @@ public class GenTesting {
 	}
 	
 	public static void main(String[] args) {
-//		String path = "C:\\Users\\bensb\\OneDrive\\Documents\\messages.htm";
-		String path = "C:\\Users\\Ole Johan\\Desktop\\facebook-olejomi\\html\\messages.htm";
+		String path = "C:\\Users\\bensb\\OneDrive\\Documents\\messages.htm";
+//		String path = "C:\\Users\\Ole Johan\\Desktop\\facebook-olejomi\\html\\messages.htm";
 		GenTesting test = new GenTesting();
 		String content = test.loadFile(path);
+		test.threads = test.removeDuplicates(test.threads);
 		
 		for(Conversation conv : test.getThreads()){
 			System.out.println(conv);

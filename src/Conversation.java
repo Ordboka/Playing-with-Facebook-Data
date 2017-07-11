@@ -44,8 +44,6 @@ public class Conversation {
 					else {
 						userWordCountMap.put(user, 1);
 					}	
-					
-					
 					inMessage = false;
 				}
 			}
@@ -55,6 +53,18 @@ public class Conversation {
 	
 	public ArrayList<Message> getMessages() {
 		return messages;
+	}
+	
+	public void addConversation(Conversation c){
+		System.out.println(c.users);
+		System.out.println(this.messages.size() + " "+ c.messages.size() + " " + (this.messages.size()+ c.messages.size()));
+		this.messages.addAll(c.messages);
+		System.out.println(this.messages.size());
+		for(String name : this.userWordCountMap.keySet()){
+			System.out.println(name + " " + this.userWordCountMap.get(name) + " " + c.userWordCountMap.get(name));
+			this.userWordCountMap.put(name, this.userWordCountMap.get(name)+c.userWordCountMap.get(name));
+			System.out.println(this.userWordCountMap.get(name));
+		}
 	}
 	
 	@Override
